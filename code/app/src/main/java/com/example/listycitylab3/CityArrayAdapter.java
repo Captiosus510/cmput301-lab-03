@@ -45,14 +45,19 @@ public class CityArrayAdapter extends ArrayAdapter<City> {
             }
         });
 
+        // add functionality for editing by tapping a list item
         ConstraintLayout contentListItem = convertView.findViewById(R.id.content_list_item);
         contentListItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle item click here
+                // Create an instance of the AddCityFragment and pass the city data to it
+                AddCityFragment fragment = AddCityFragment.newInstance(position, city);
+                fragment.show(((MainActivity) context).getSupportFragmentManager(), "Edit City");
             }
         });
 
         return convertView;
     }
+
+
 }

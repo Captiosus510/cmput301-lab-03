@@ -54,4 +54,10 @@ public class MainActivity extends AppCompatActivity implements AddCityFragment.A
         cityAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void editCity(City city, int position) {
+        dataList.set(position, city);
+        cityAdapter.notifyDataSetChanged();
+
+    }
 }
